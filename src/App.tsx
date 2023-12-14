@@ -1,11 +1,11 @@
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
+import mobxLogo from "./assets/mobx.svg";
 import "./App.css";
 import { observable } from "mobx";
 import { observer } from "mobx-react";
 
 function App() {
-  // const [count, setCount] = useState(0)
   const counterState = observable({
     count: 0,
     incrementCount: () => {
@@ -30,9 +30,6 @@ function App() {
         <button onClick={counterState.incrementCount}>+</button>
         <p>{counterState.count}</p>
         <button onClick={counterState.decrementCount}>-</button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
       </div>
     );
   });
@@ -46,12 +43,13 @@ function App() {
         <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
+        <a href="https://mobx.js.org" target="_blank">
+          <img src={mobxLogo} className="logo mobx" alt="Mobx logo" />
+        </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1>Vite + React + Mobx</h1>
       <Counter counterState={counterState} />
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <p className="read-the-docs">Click on the logos to learn more</p>
     </>
   );
 }
